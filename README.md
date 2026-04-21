@@ -34,6 +34,12 @@ Secondary goals:
   - Simple linear regression for survival months using positive regional nodes.
 - sceniro.py
   - Rule-based high-risk vs low-risk scenario comparison.
+- Steps.md
+  - Granular step-by-step guide to run this project in VS Code on Windows.
+- run_project.bat
+  - Double-click batch file to create the venv, install dependencies, and run all scripts.
+- Tryme.bat
+  - Double-click batch file to launch the three plot scripts in parallel.
 - README.md
   - Project documentation.
 
@@ -100,6 +106,8 @@ pip install -r requirements.txt
 
 Run scripts from the project root directory so Breast_Cancer.csv can be located correctly.
 
+For a full VS Code walkthrough, see Steps.md.
+
 Recommended order:
 1. EDA.py
 2. Correlation.py
@@ -116,6 +124,56 @@ python Visaulization.py
 python testing.py
 python SLR.py
 python sceniro.py
+
+## 6.1 Quick Run in VS Code (Windows)
+
+1. Open this folder in VS Code.
+2. Open Terminal > New Terminal.
+3. Create and activate venv:
+
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+4. Install dependencies:
+
+pip install numpy pandas matplotlib seaborn scipy scikit-learn
+
+5. Select interpreter:
+- Ctrl+Shift+P -> Python: Select Interpreter -> .venv/Scripts/python.exe
+
+6. Run scripts in order:
+
+python EDA.py
+python Correlation.py
+python Visaulization.py
+python testing.py
+python SLR.py
+python sceniro.py
+
+## 6.2 One-Click Batch Run
+
+If you want the simplest possible startup, double-click:
+
+run_project.bat
+
+This will:
+- switch to the project folder
+- create .venv if it does not exist
+- activate the virtual environment
+- install required packages
+- run all analysis scripts in sequence
+
+## 6.3 Parallel Plot Run
+
+If you want the three plot graphs to open at the same time, double-click:
+
+Tryme.bat
+
+This will:
+- create .venv if needed
+- activate the virtual environment
+- install required packages
+- launch Correlation.py, Visaulization.py, and SLR.py in parallel
 
 ## 7. Script-by-Script Deep Dive
 
