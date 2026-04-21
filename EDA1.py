@@ -36,15 +36,6 @@ for col in key_features:
 
 
 
-# Plot 2: Boxplot - Tumor Size by Status
-plt.figure(figsize=(8,5))
-sns.boxplot(data=df, x='Status', y='Tumor Size', hue='Status', palette='Set2', legend=False)
-plt.title("Tumor Size by Survival Status")
-plt.xlabel("Survival Status")
-plt.ylabel("Tumor Size")
-plt.show()
-
-
 # 5. Outlier detection using IQR
 print("\nOutlier Count (IQR method):")
 for col in key_features:
